@@ -31,7 +31,14 @@ const stories = [
 ];
 
 const artists = [
-  { name: "Nomi nuovi", tag: "Artisti emergenti", accent: "blue" },
+  {
+    name: "PRZ KAI",
+    tag: "Classe 2004 · Provincia di Napoli",
+    accent: "red",
+    bio: "Un progetto solido e versatile: dal rap hard al conscious, fino alle sfumature trap love. La stoffa c'è e noi ci crediamo.",
+    instagram: "https://www.instagram.com/luigipirozzi_21/",
+    tiktok: "https://www.tiktok.com/@przkai21",
+  },
   { name: "Voci vere", tag: "Storie dalla scena", accent: "red" },
   { name: "Next up", tag: "Talenti da tenere d'occhio", accent: "white" },
 ];
@@ -105,7 +112,7 @@ export default function Home() {
         <section className="radar section-pad" id="radar">
           <div className="section-kicker light"><span>03</span><span>Radar Frequenza</span></div>
           <div className="radar-head"><h2>Il prossimo<br /><em>nome da sapere.</em></h2><p>Ogni settimana selezioniamo i talenti che meritano un ascolto in più. La scena è grande. Noi sappiamo dove guardare.</p></div>
-          <div className="artist-list">{artists.map((artist, index) => <div className={`artist-row ${artist.accent}`} key={artist.name}><span className="artist-index">0{index + 1}</span><div><h3>{artist.name}</h3><p>{artist.tag}</p></div><ArrowUpRight className="artist-arrow" size={24} /></div>)}</div>
+          <div className="artist-list">{artists.map((artist, index) => <div className={`artist-row ${artist.accent}`} key={artist.name}><span className="artist-index">0{index + 1}</span><div><h3>{artist.name}</h3><p>{artist.tag}</p>{artist.bio && <p className="artist-bio">{artist.bio}</p>}{artist.instagram && <div className="artist-socials"><a href={artist.instagram} target="_blank" rel="noreferrer">Instagram ↗</a><a href={artist.tiktok} target="_blank" rel="noreferrer">TikTok ↗</a></div>}</div><ArrowUpRight className="artist-arrow" size={24} /></div>)}</div>
           <a className="button button-outline" href={socialLinks.instagram} target="_blank" rel="noreferrer">Segui il radar su Instagram <Instagram size={17} /></a>
         </section>
 
