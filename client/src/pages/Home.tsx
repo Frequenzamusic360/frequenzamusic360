@@ -96,6 +96,14 @@ export default function Home() {
           <div className="ticker-track"><span>ARTISTI EMERGENTI</span><b>✦</b><span>RAP ITALIANO</span><b>✦</b><span>NUOVE USCITE</span><b>✦</b><span>STORIE VERE</span><b>✦</b><span>ARTISTI EMERGENTI</span><b>✦</b><span>RAP ITALIANO</span></div>
         </section>
 
+        <section className="social-feed section-pad" id="nuovi-contenuti">
+          <div className="section-heading social-feed-heading"><div><div className="section-kicker"><span>01B</span><span>Segui la frequenza</span></div><h2>Nuovi<br /><em>contenuti.</em></h2></div><p>Post, Reel e video dalla nostra pagina. Seguici sui social per non perdere le prossime uscite.</p></div>
+          <div className="social-feed-grid">
+            <a className="social-feed-card instagram-card" href={socialLinks.instagram} target="_blank" rel="noreferrer"><span className="social-feed-icon"><Instagram size={23} /></span><div><span className="social-feed-label">Instagram</span><h3>@frequenzamusic360</h3><p>Scopri post, Reel, artisti e nuove storie dalla scena rap italiana.</p></div><ArrowUpRight className="social-feed-arrow" size={22} /></a>
+            <a className="social-feed-card tiktok-card" href={socialLinks.tiktok} target="_blank" rel="noreferrer"><span className="social-feed-icon"><Music2 size={23} /></span><div><span className="social-feed-label">TikTok</span><h3>@frequenzamusic360</h3><p>Guarda i video, gli estratti e le frequenze che stanno girando.</p></div><ArrowUpRight className="social-feed-arrow" size={22} /></a>
+          </div>
+        </section>
+
         <section className="intro section-pad" id="chi-siamo">
           <div className="section-kicker"><span>01</span><span>La nostra missione</span></div>
           <div className="intro-grid">
