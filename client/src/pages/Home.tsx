@@ -5,27 +5,28 @@ const socialLinks = {
   instagram: "https://www.instagram.com/frequenzamusic360/",
   tiktok: "https://www.tiktok.com/@frequenzamusic360",
 };
+const contactEmail = "frequenzamusic360@gmail.com";
 
 const stories = [
   {
     category: "Suoni nuovi",
     title: "La prossima voce potrebbe essere la tua",
     text: "Scopriamo artisti, strofe e produzioni che meritano spazio. Senza filtri, senza porte chiuse.",
-    image: "/assets/frequenza-card-2.jpg",
+    image: "/manus-storage/frequenza-card-2_1e525fd2.jpg",
     number: "01",
   },
   {
     category: "Frequenze",
     title: "Dalla cameretta al palco",
     text: "Le storie degli emergenti italiani: percorso, visione e il brano che li sta facendo muovere.",
-    image: "/assets/frequenza-card-3.jpg",
+    image: "/manus-storage/frequenza-card-3_5ae2eece.jpg",
     number: "02",
   },
   {
     category: "Radar",
     title: "Ascolta prima degli altri",
     text: "Release, freestyle e nuove connessioni per restare sintonizzati sulla scena che cresce.",
-    image: "/assets/frequenza-card-1.jpg",
+    image: "/manus-storage/frequenza-card-1_fd89bc8a.jpg",
     number: "03",
   },
 ];
@@ -49,6 +50,12 @@ export default function Home() {
 
   const handleContact = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    const name = String(formData.get("name") || "");
+    const message = String(formData.get("message") || "");
+    const subject = encodeURIComponent(`Nuova proposta da ${name}`);
+    const body = encodeURIComponent(`Ciao FrequenzaMusic360,\n\nNome / nome d'arte: ${name}\n\nProgetto:\n${message}`);
+    window.location.href = `mailto:${contactEmail}?subject=${subject}&body=${body}`;
     setSent(true);
   };
 
@@ -85,7 +92,7 @@ export default function Home() {
               </div>
             </div>
             <div className="hero-side">
-              <div className="hero-logo-frame"><img src="/assets/logo-frequenza.png" alt="Logo FrequenzaMusic360" /></div>
+              <div className="hero-logo-frame"><img src="/manus-storage/logo_frequenza_2_60ac6717.png" alt="Logo FrequenzaMusic360" /></div>
               <div className="hero-note"><span>01</span><p>Non cerchiamo il nome più grande.<br /><strong>Cerchiamo quello più vero.</strong></p></div>
             </div>
           </div>
@@ -125,11 +132,11 @@ export default function Home() {
         </section>
 
         <section className="contact section-pad" id="contatti">
-          <div className="contact-grid"><div><div className="section-kicker"><span>04</span><span>Contatti</span></div><h2>Fatti<br /><em>sentire.</em></h2><p className="contact-copy">Hai un brano, un video o una storia da raccontare? Mandaci il tuo progetto. Se ci colpisce, lo portiamo nella nostra frequenza.</p><div className="social-row"><a href={socialLinks.instagram} target="_blank" rel="noreferrer"><Instagram size={18} /> Instagram</a><a href={socialLinks.tiktok} target="_blank" rel="noreferrer"><Music2 size={18} /> TikTok</a></div></div><form className="contact-form" onSubmit={handleContact}><label htmlFor="name">Il tuo nome / nome d'arte</label><input id="name" name="name" placeholder="Es. Niko South" required /><label htmlFor="message">Raccontaci il progetto</label><textarea id="message" name="message" rows={4} placeholder="Link, brano, profilo..." required /><button className="button button-primary" type="submit">{sent ? "Messaggio pronto ✓" : "Invia la proposta"} <Send size={16} /></button>{sent && <p className="form-note">Grazie. Per completare l'invio, scrivici in DM su Instagram o TikTok.</p>}</form></div>
+          <div className="contact-grid"><div><div className="section-kicker"><span>04</span><span>Contatti</span></div><h2>Fatti<br /><em>sentire.</em></h2><p className="contact-copy">Hai un brano, un video o una storia da raccontare? Mandaci il tuo progetto. Se ci colpisce, lo portiamo nella nostra frequenza.</p><a className="contact-email" href={`mailto:${contactEmail}`}>{contactEmail}</a><div className="social-row"><a href={socialLinks.instagram} target="_blank" rel="noreferrer"><Instagram size={18} /> Instagram</a><a href={socialLinks.tiktok} target="_blank" rel="noreferrer"><Music2 size={18} /> TikTok</a></div></div><form className="contact-form" onSubmit={handleContact}><label htmlFor="name">Il tuo nome / nome d'arte</label><input id="name" name="name" placeholder="Es. Niko South" required /><label htmlFor="message">Raccontaci il progetto</label><textarea id="message" name="message" rows={4} placeholder="Link, brano, profilo..." required /><button className="button button-primary" type="submit">{sent ? "Email pronta ✓" : "Invia la proposta"} <Send size={16} /></button>{sent && <p className="form-note">Si è aperta la tua app email con il messaggio già impostato.</p>}</form></div>
         </section>
       </main>
 
-      <footer className="footer section-pad"><div className="footer-brand"><span className="brand-mark">FM</span><span>FREQUENZA<span>360</span></span></div><p>La nuova musica italiana, senza rumore di fondo.</p><div className="footer-links"><a href={socialLinks.instagram} target="_blank" rel="noreferrer">Instagram ↗</a><a href={socialLinks.tiktok} target="_blank" rel="noreferrer">TikTok ↗</a></div><small>© 2026 FrequenzaMusic360 · Tutti i diritti riservati</small></footer>
+      <footer className="footer section-pad"><div className="footer-brand"><span className="brand-mark">FM</span><span>FREQUENZA<span>360</span></span></div><p>La nuova musica italiana, senza rumore di fondo.</p><div className="footer-links"><a href={`mailto:${contactEmail}`}>{contactEmail}</a><a href={socialLinks.instagram} target="_blank" rel="noreferrer">Instagram ↗</a><a href={socialLinks.tiktok} target="_blank" rel="noreferrer">TikTok ↗</a></div><small>© 2026 FrequenzaMusic360 · Tutti i diritti riservati</small></footer>
     </div>
   );
 }
