@@ -111,11 +111,13 @@ export default function Home() {
           </div>
         </section>
 
+        <div className="about-bar section-pad" aria-label="Chi siamo"><span className="about-bar-title">CHI SIAMO</span><span className="about-bar-line" /><span className="about-bar-copy">FREQUENZAMUSIC360 · MAGAZINE INDIPENDENTE</span></div>
+
         <section className="intro section-pad" id="chi-siamo">
           <div className="section-kicker"><span>01</span><span>La nostra missione</span></div>
           <div className="intro-grid">
             <h2>Se hai qualcosa<br /><em>da dire,</em><br />ti ascoltiamo.</h2>
-            <div className="intro-body"><p>FrequenzaMusic360 nasce per dare spazio a chi sta costruendo la propria voce. Presentiamo nuovi artisti, nuova musica e tutto quello che si muove sotto la superficie della scena italiana.</p><p className="muted">Qui non servono numeri perfetti. Serve qualcosa di forte, autentico, tuo.</p><a className="arrow-link" href="#contatti">Conosci il progetto <ArrowUpRight size={17} /></a></div>
+            <div className="intro-body"><p>Mi chiamo Marco e vengo da Napoli. Ho creato FrequenzaMusic360 perché amo il mondo della musica a 360 gradi e credo nelle voci che ancora non hanno trovato spazio.</p><p className="muted">Il mio obiettivo è dare voce a chi ha qualcosa da dire e far conoscere al pubblico ragazzi con talento, idee e storie che meritano di essere ascoltate.</p><p className="muted">In futuro voglio trasformare la pagina e il sito in un vero polo per chi cerca musica nuova e per chi ha voglia di portarla nel mondo.</p><a className="arrow-link" href="#contatti">Conosci il progetto <ArrowUpRight size={17} /></a></div>
           </div>
         </section>
 
